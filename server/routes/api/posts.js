@@ -7,11 +7,9 @@ const slugify = require('slugify')
 // Get All Posts
 router.get('/', async (req, res) => {
     try {
-        const allPosts = await Post.find()
-        res.status(200).json({
-            status: 'success',
-            allPosts
-        })
+        const posts = await Post.find()
+        res.send(posts)
+
     } catch (err) {
         res.json({ err })
     }

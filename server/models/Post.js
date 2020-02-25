@@ -33,9 +33,9 @@ PostSchema.pre('save', function(next) {
     next();
 })
 
-PostSchema.pre('update', function (next) {
-    this.slug = slugify(this.name, { lower: true });
-    next();
-})
+// PostSchema.pre('update', function (next) {
+//     this.slug = slugify(this.name, { lower: true });
+//     next();
+// })
 
 module.exports = mongoose.model('Posts', PostSchema)
